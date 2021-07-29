@@ -24,14 +24,14 @@ export class AppComponent {
 
 
 getData(){
-  this.http.get<any>('http://localhost:3000/data').subscribe(data => {
+  this.http.get<any>('/api/data').subscribe(data => {
       this.data  = data.salary
       console.log(this.data)
     })
 }
 
 sendData(){
-  this.http.post<any>("http://localhost:3000/data", {}, this.httpOptions).subscribe(data =>{
+  this.http.post<any>("/api/data", {}, this.httpOptions).subscribe(data =>{
     console.log(this.data)
   })
 }
